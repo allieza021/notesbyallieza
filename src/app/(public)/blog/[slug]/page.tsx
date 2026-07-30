@@ -46,7 +46,7 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
       <article className="min-h-screen">
         {/* Cover Image */}
         {blog.cover_image_url && (
-          <div className="relative w-full h-64 md:h-96 lg:h-[480px] overflow-hidden">
+          <div className="relative w-full h-56 md:h-96 lg:h-[480px] overflow-hidden">
             <Image
               src={blog.cover_image_url}
               alt={blog.title}
@@ -58,7 +58,7 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
           </div>
         )}
 
-        <div className="container mx-auto px-6 max-w-4xl py-10">
+        <div className="container mx-auto px-4 md:px-6 max-w-4xl py-8 md:py-10">
           {/* Back link */}
           <Link
             href="/blog"
@@ -80,7 +80,7 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
           )}
 
           {/* Title */}
-          <h1 className="font-serif font-black text-foreground mb-6 leading-tight">
+          <h1 className="font-serif font-black text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
             {blog.title}
           </h1>
 
@@ -140,7 +140,7 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
 
           {/* Author Card */}
           {blog.author && (
-            <div className="mt-12 p-6 rounded-2xl bg-muted/40 border border-border flex gap-5 items-start">
+            <div className="mt-12 p-6 rounded-2xl bg-muted/40 border border-border flex flex-col md:flex-row gap-5 items-center md:items-start text-center md:text-left">
               <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden flex-shrink-0">
                 {blog.author.avatar_url ? (
                   <Image
@@ -179,9 +179,9 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
 
         {/* Related Posts */}
         {relatedBlogs.length > 0 && (
-          <section className="py-16 bg-muted/30 border-t border-border">
-            <div className="container mx-auto px-6 max-w-6xl">
-              <h2 className="font-serif font-bold text-2xl text-foreground mb-8">Related Posts</h2>
+          <section className="py-12 md:py-16 bg-muted/30 border-t border-border">
+            <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+              <h2 className="font-serif font-bold text-2xl md:text-3xl text-foreground mb-8">Related Posts</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedBlogs.map((related) => (
                   <BlogCard key={related.id} blog={related} />

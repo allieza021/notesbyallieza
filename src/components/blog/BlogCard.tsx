@@ -19,7 +19,7 @@ export default function BlogCard({ blog, featured = false }: BlogCardProps) {
       className={`group block bg-card rounded-2xl border border-border overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${featured ? 'md:grid md:grid-cols-2' : ''}`}
     >
       {/* Cover Image */}
-      <div className={`relative overflow-hidden bg-muted ${featured ? 'h-64 md:h-full' : 'h-52'}`}>
+      <div className={`relative overflow-hidden bg-muted ${featured ? 'h-56 md:h-full' : 'h-48 md:h-52'}`}>
         {blog.cover_image_url ? (
           <Image
             src={blog.cover_image_url}
@@ -54,7 +54,7 @@ export default function BlogCard({ blog, featured = false }: BlogCardProps) {
       </div>
 
       {/* Content */}
-      <div className="p-6 flex flex-col gap-3">
+      <div className="p-5 md:p-6 flex flex-col gap-3">
         {/* Meta */}
         <div className="flex items-center gap-3 text-xs text-muted-foreground">
           <span className="flex items-center gap-1.5">
@@ -68,7 +68,7 @@ export default function BlogCard({ blog, featured = false }: BlogCardProps) {
         </div>
 
         {/* Title */}
-        <h2 className={`font-serif font-bold text-foreground group-hover:text-primary transition-colors duration-200 line-clamp-2 ${featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
+        <h2 className={`font-serif font-bold text-foreground group-hover:text-primary transition-colors duration-200 line-clamp-2 ${featured ? 'text-xl md:text-3xl' : 'text-lg md:text-xl'}`}>
           {blog.title}
         </h2>
 

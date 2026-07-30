@@ -21,8 +21,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-muted/40 border-t border-border mt-auto">
-      <div className="container mx-auto px-6 max-w-6xl py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="container mx-auto px-6 max-w-6xl py-10 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4 group w-fit">
@@ -110,8 +110,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground flex items-center gap-1.5">
+        <div className="mt-10 md:mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <p className="text-sm text-muted-foreground flex items-center justify-center sm:justify-start gap-1.5">
             © {currentYear} Notes by Allieza. Made with{' '}
             <Heart className="w-3.5 h-3.5 text-red-500 fill-current" /> by Allieza.
           </p>

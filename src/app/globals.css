@@ -85,6 +85,7 @@
     font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -106,9 +107,16 @@
   /* ── Blog Content / Prose ─────────────────────────────────── */
   .blog-content {
     @apply text-muted-foreground;
-    font-size: 1.1rem;
-    line-height: 1.85;
-    max-width: 780px;
+    font-size: 1rem;
+    line-height: 1.75;
+    max-width: 100%;
+  }
+  @media (min-width: 768px) {
+    .blog-content {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      max-width: 780px;
+    }
   }
 
   .blog-content h1,
@@ -118,8 +126,13 @@
     @apply text-foreground mt-8 mb-4;
   }
 
-  .blog-content h2 { font-size: 1.75rem; }
-  .blog-content h3 { font-size: 1.375rem; }
+  .blog-content h2 { font-size: 1.5rem; }
+  .blog-content h3 { font-size: 1.25rem; }
+  
+  @media (min-width: 768px) {
+    .blog-content h2 { font-size: 1.75rem; }
+    .blog-content h3 { font-size: 1.375rem; }
+  }
 
   .blog-content p { @apply mb-5; }
 

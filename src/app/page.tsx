@@ -39,7 +39,7 @@ export default async function HomePage() {
   return (
     <div className="flex flex-col">
       {/* ── Hero Section ───────────────────────────────────────── */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] md:min-h-[85vh] flex items-center overflow-hidden py-12 md:py-0">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-purple-50/30 dark:from-primary/10 dark:via-background dark:to-purple-950/20" />
         {/* Decorative blobs */}
@@ -66,14 +66,14 @@ export default async function HomePage() {
               <strong className="text-foreground">programming</strong>, and academic
               reflections.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="shadow-lg shadow-primary/25">
-                <Link href="/blog">
-                  Explore Posts <ArrowRight className="w-4 h-4" />
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
+              <Button asChild size="lg" className="shadow-lg shadow-primary/25 w-full sm:w-auto h-12">
+                <Link href="/blog" className="flex items-center justify-center">
+                  Explore Posts <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/about">About Me</Link>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12">
+                <Link href="/about" className="flex items-center justify-center">About Me</Link>
               </Button>
             </div>
           </div>
@@ -82,11 +82,11 @@ export default async function HomePage() {
 
       {/* ── Featured Post ───────────────────────────────────────── */}
       {featuredBlog && (
-        <section className="py-20 bg-muted/30">
+        <section className="py-12 md:py-20 bg-muted/30">
           <div className="container mx-auto px-6 max-w-6xl">
-            <div className="flex items-baseline justify-between mb-10">
+            <div className="flex items-baseline justify-between mb-8 md:mb-10">
               <div>
-                <h2 className="font-serif font-bold text-3xl text-foreground">Featured Post</h2>
+                <h2 className="font-serif font-bold text-2xl md:text-3xl text-foreground">Featured Post</h2>
                 <div className="h-1 w-12 bg-primary rounded-full mt-2" />
               </div>
               <Link
@@ -102,11 +102,11 @@ export default async function HomePage() {
       )}
 
       {/* ── Latest Posts ────────────────────────────────────────── */}
-      <section className="py-20">
+      <section className="py-12 md:py-20">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="flex items-baseline justify-between mb-10">
+          <div className="flex items-baseline justify-between mb-8 md:mb-10">
             <div>
-              <h2 className="font-serif font-bold text-3xl text-foreground">Latest Posts</h2>
+              <h2 className="font-serif font-bold text-2xl md:text-3xl text-foreground">Latest Posts</h2>
               <div className="h-1 w-12 bg-primary rounded-full mt-2" />
             </div>
             <Link
@@ -143,10 +143,10 @@ export default async function HomePage() {
 
       {/* ── Categories Section ──────────────────────────────────── */}
       {categories.length > 0 && (
-        <section className="py-20 bg-muted/30">
+        <section className="py-12 md:py-20 bg-muted/30">
           <div className="container mx-auto px-6 max-w-6xl">
-            <div className="text-center mb-12">
-              <h2 className="font-serif font-bold text-3xl text-foreground mb-3">
+            <div className="text-center mb-10 md:mb-12">
+              <h2 className="font-serif font-bold text-2xl md:text-3xl text-foreground mb-3">
                 Browse by Topic
               </h2>
               <p className="text-muted-foreground">
@@ -180,9 +180,9 @@ export default async function HomePage() {
       )}
 
       {/* ── About Preview ───────────────────────────────────────── */}
-      <section className="py-20">
-        <div className="container mx-auto px-6 max-w-6xl">
-          <div className="rounded-3xl bg-gradient-to-br from-primary/5 to-purple-50/50 dark:from-primary/10 dark:to-purple-950/20 border border-primary/10 p-10 md:p-14 flex flex-col md:flex-row items-center gap-10">
+      <section className="py-12 md:py-20">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <div className="rounded-3xl bg-gradient-to-br from-primary/5 to-purple-50/50 dark:from-primary/10 dark:to-purple-950/20 border border-primary/10 p-8 md:p-14 flex flex-col md:flex-row items-center gap-8 md:gap-10">
             {/* Avatar */}
             <div className="flex-shrink-0">
               <div className="w-32 h-32 rounded-full ring-4 ring-primary/20 overflow-hidden bg-primary/10 flex items-center justify-center">
@@ -205,7 +205,7 @@ export default async function HomePage() {
                 <GraduationCap className="w-3.5 h-3.5" />
                 About the Author
               </div>
-              <h2 className="font-serif font-bold text-3xl text-foreground mb-1">
+              <h2 className="font-serif font-bold text-2xl md:text-3xl text-foreground mb-1">
                 {profile?.display_name || profile?.full_name || 'Allieza'}
               </h2>
               <p className="text-primary font-medium text-sm mb-4">
