@@ -66,13 +66,13 @@ export default async function HomePage() {
               <strong className="text-foreground">programming</strong>, and academic
               reflections.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 w-full">
-              <Button asChild size="lg" className="shadow-lg shadow-primary/25 w-full sm:w-auto h-12">
+            <div className="flex flex-wrap gap-4 mt-2">
+              <Button asChild size="lg" className="shadow-lg shadow-primary/25">
                 <Link href="/blog" className="flex items-center justify-center">
                   Explore Posts <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto h-12">
+              <Button asChild size="lg" variant="outline">
                 <Link href="/about" className="flex items-center justify-center">About Me</Link>
               </Button>
             </div>
@@ -181,7 +181,7 @@ export default async function HomePage() {
 
       {/* ── About Preview ───────────────────────────────────────── */}
       <section className="py-12 md:py-20">
-        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="rounded-3xl bg-gradient-to-br from-primary/5 to-purple-50/50 dark:from-primary/10 dark:to-purple-950/20 border border-primary/10 p-8 md:p-14 flex flex-col md:flex-row items-center gap-8 md:gap-10">
             {/* Avatar */}
             <div className="flex-shrink-0">

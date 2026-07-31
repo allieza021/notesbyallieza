@@ -60,23 +60,27 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
 
         <div className="container mx-auto px-4 md:px-6 max-w-4xl py-8 md:py-10">
           {/* Back link */}
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors mb-8 group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
-            Back to Blog
-          </Link>
+          <div className="mb-8">
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors group w-fit"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+              Back to Blog
+            </Link>
+          </div>
 
           {/* Category */}
           {blog.category && (
-            <Link
-              href={`/blog?category=${blog.category.slug}`}
-              className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold text-white mb-4"
-              style={{ backgroundColor: blog.category.color || '#4f46e5' }}
-            >
-              {blog.category.name}
-            </Link>
+            <div className="mb-4">
+              <Link
+                href={`/blog?category=${blog.category.slug}`}
+                className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold text-white"
+                style={{ backgroundColor: blog.category.color || '#4f46e5' }}
+              >
+                {blog.category.name}
+              </Link>
+            </div>
           )}
 
           {/* Title */}
