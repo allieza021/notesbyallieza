@@ -17,7 +17,7 @@ const INITIAL_SONGS: Song[] = [
   { id: '1', title: 'Meaningful Silence', artist: 'The Ridleys', query: 'Meaningful Silence The Ridleys' },
   { id: '2', title: 'Things Will Be Okay', artist: 'A Kid Named Rufus', query: 'Things Will Be Okay A Kid Named Rufus' },
   { id: '3', title: 'My Favorite Clothes', artist: 'RINI', query: 'My Favorite Clothes RINI' },
-  { id: '4', title: 'It all makes sense', artist: 'The Ridleys', query: 'It all makes sense The Ridleys' },
+  { id: '4', title: 'Pahina', artist: 'Cup of Joe', query: 'Pahina Cup of Joe' },
   { id: '5', title: 'Reside', artist: 'SUGARCANE', query: 'Reside SUGARCANE' },
 ];
 

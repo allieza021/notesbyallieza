@@ -55,7 +55,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         suppressHydrationWarning
         className={`${inter.variable} ${playfair.variable}`}
       >
-      <body className="min-h-screen flex flex-col bg-background text-foreground antialiased">
+      <body className="min-h-screen flex flex-col bg-background text-foreground antialiased overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

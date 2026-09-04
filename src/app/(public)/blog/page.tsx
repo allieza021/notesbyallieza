@@ -41,7 +41,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     <div className="min-h-screen">
       {/* Header */}
       <section className="py-16 bg-gradient-to-b from-muted/40 to-background border-b border-border">
-        <div className="container mx-auto px-6 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <h1 className="font-black text-5xl text-foreground mb-3">Blog</h1>
           <p className="text-muted-foreground text-lg">
             {total} {total === 1 ? 'post' : 'posts'} on cybersecurity, development, and learning
@@ -65,7 +65,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </div>
       </section>
 
-      <div className="container mx-auto px-6 max-w-6xl py-12">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl py-12">
         {/* Category Filters */}
         {categories.length > 0 && (
           <div className="flex flex-wrap gap-2 mb-10">
@@ -191,3 +191,4 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     </div>
   );
 }
+

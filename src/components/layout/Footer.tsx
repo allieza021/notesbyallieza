@@ -21,7 +21,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-muted/40 border-t border-border mt-auto">
-      <div className="container mx-auto px-6 max-w-6xl py-10 md:py-16">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl py-10 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="md:col-span-2">

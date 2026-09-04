@@ -25,7 +25,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
 
   return (
     <div className="min-h-screen py-16">
-      <div className="container mx-auto px-6 max-w-6xl">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <h1 className="font-black text-4xl text-foreground mb-3">Search</h1>
 
         {/* Search Form */}
@@ -78,3 +78,4 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
     </div>
   );
 }
+

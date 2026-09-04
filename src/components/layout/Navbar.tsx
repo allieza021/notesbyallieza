@@ -39,7 +39,7 @@ export default function Navbar() {
           : 'bg-background/40 backdrop-blur-md'
       )}
     >
-      <div className="container mx-auto px-6 max-w-6xl">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link
@@ -78,7 +78,7 @@ export default function Navbar() {
             <ThemeToggle />
             {/* Mobile menu button */}
             <button
-              className="md:hidden p-3 rounded-xl hover:bg-accent transition-colors"
+              className="md:hidden p-3 rounded-xl hover:bg-accent transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu"
               aria-expanded={isOpen}
@@ -92,7 +92,7 @@ export default function Navbar() {
         <div
           className={cn(
             'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
-            isOpen ? 'max-h-80 opacity-100 pb-4' : 'max-h-0 opacity-0'
+            isOpen ? 'max-h-[500px] opacity-100 pb-4' : 'max-h-0 opacity-0'
           )}
         >
           <div className="flex flex-col gap-2 pt-4 pb-2 border-t border-border">

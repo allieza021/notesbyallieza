@@ -25,14 +25,14 @@ export default async function ProfilePage() {
 
   return (
     <div className="min-h-screen py-16">
-      <div className="container mx-auto px-6 max-w-5xl">
+      <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         
         {/* Bento Box Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16 auto-rows-[minmax(180px,auto)]">
           
           {/* Main Bio Card (Spans 2 columns, 2 rows) */}
           <BentoCard className="md:col-span-2 md:row-span-2 p-8 md:p-10 flex flex-col justify-center">
-            <div className="flex items-center gap-6 mb-6">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6 mb-6">
               <div className="w-24 h-24 rounded-full ring-4 ring-primary/20 ring-offset-4 ring-offset-background overflow-hidden bg-primary/10 flex items-center justify-center shadow-xl shrink-0">
                 {profile?.avatar_url ? (
                   <Image
@@ -186,3 +186,4 @@ export default async function ProfilePage() {
     </div>
   );
 }
+

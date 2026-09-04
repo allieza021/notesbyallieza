@@ -39,7 +39,7 @@ export default async function AboutPage() {
     <div className="min-h-screen">
       {/* Hero */}
       <section className="py-20 bg-gradient-to-b from-muted/40 to-background border-b border-border">
-        <div className="container mx-auto px-6 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="flex flex-col md:flex-row items-center gap-12">
             {/* Avatar */}
             <div className="flex-shrink-0">
@@ -118,7 +118,7 @@ export default async function AboutPage() {
 
       {/* What I Write About */}
       <section className="py-16">
-        <div className="container mx-auto px-6 max-w-6xl">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="font-bold text-3xl text-foreground mb-4">What I Write About</h2>
@@ -180,3 +180,4 @@ export default async function AboutPage() {
     </div>
   );
 }
+
