@@ -21,7 +21,7 @@ export default async function CategoriesPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-card p-6 rounded-2xl border border-border shadow-sm">
         <div>
-          <h1 className="font-serif font-black text-2xl md:text-3xl text-foreground">
+          <h1 className="font-black text-2xl md:text-3xl text-foreground">
             Manage Categories
           </h1>
           <p className="text-sm text-muted-foreground mt-1">

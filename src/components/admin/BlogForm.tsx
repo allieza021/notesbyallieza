@@ -158,21 +158,22 @@ export default function BlogForm({ blog, categories, allTags, mode }: BlogFormPr
   return (
     <div className="max-w-5xl mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
         <div>
-          <h1 className="font-serif font-black text-3xl text-foreground">
+          <h1 className="font-black text-3xl text-foreground">
             {mode === 'create' ? 'New Post' : 'Edit Post'}
           </h1>
           <p className="text-muted-foreground mt-1 text-sm">
             {mode === 'create' ? 'Write and publish your new blog post.' : 'Update your blog post.'}
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
           <Button
             variant="outline"
             onClick={() => handleSubmit(false)}
             disabled={saving}
             id="save-draft-button"
+            className="w-full sm:w-auto"
           >
             {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
             Save Draft
@@ -181,6 +182,7 @@ export default function BlogForm({ blog, categories, allTags, mode }: BlogFormPr
             onClick={() => handleSubmit(true)}
             disabled={saving}
             id="publish-button"
+            className="w-full sm:w-auto"
           >
             {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Eye className="w-4 h-4" />}
             {form.is_published ? 'Update & Publish' : 'Publish'}

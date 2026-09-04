@@ -17,7 +17,7 @@ export default async function ManageBlogsPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="font-serif font-black text-3xl text-foreground">Manage Posts</h1>
+          <h1 className="font-black text-3xl text-foreground">Manage Posts</h1>
           <p className="text-muted-foreground mt-1 text-sm">{blogs.length} total posts</p>
         </div>
         <Button asChild>

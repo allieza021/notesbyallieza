@@ -9,6 +9,11 @@ const nextConfig = {
         hostname: 'uislatovwezvcthvbnxh.supabase.co',
         pathname: '/storage/v1/object/public/**',
       },
+      {
+        protocol: 'https',
+        hostname: '*.mzstatic.com',
+        pathname: '/**',
+      },
     ],
   },
   webpack(config) {

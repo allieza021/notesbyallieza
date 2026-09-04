@@ -23,6 +23,7 @@ export default async function SettingsPage() {
     github_url: null,
     facebook_url: null,
     instagram_url: null,
+    public_email: null,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   };

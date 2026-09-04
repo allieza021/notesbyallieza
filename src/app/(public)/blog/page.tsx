@@ -42,7 +42,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
       {/* Header */}
       <section className="py-16 bg-gradient-to-b from-muted/40 to-background border-b border-border">
         <div className="container mx-auto px-6 max-w-6xl">
-          <h1 className="font-serif font-black text-5xl text-foreground mb-3">Blog</h1>
+          <h1 className="font-black text-5xl text-foreground mb-3">Blog</h1>
           <p className="text-muted-foreground text-lg">
             {total} {total === 1 ? 'post' : 'posts'} on cybersecurity, development, and learning
           </p>
@@ -173,7 +173,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         ) : (
           <div className="text-center py-24">
             <div className="text-5xl mb-4">🔍</div>
-            <h3 className="font-serif text-2xl font-bold text-foreground mb-2">
+            <h3 className="text-2xl font-bold text-foreground mb-2">
               No posts found
             </h3>
             <p className="text-muted-foreground mb-6">

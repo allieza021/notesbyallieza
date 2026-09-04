@@ -36,6 +36,8 @@ export const profileSchema = z.object({
   github_url: z.string().url('Must be a valid URL').optional().or(z.literal('')),
   facebook_url: z.string().url('Must be a valid URL').optional().or(z.literal('')),
   instagram_url: z.string().url('Must be a valid URL').optional().or(z.literal('')),
+  public_email: z.string().email('Must be a valid email address').optional().or(z.literal('')),
+  show_spotify: z.boolean().optional().default(true),
 });
 
 export type ProfileFormValues = z.infer<typeof profileSchema>;

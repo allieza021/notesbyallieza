@@ -57,14 +57,14 @@ export default function LoginPage() {
           <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center shadow-lg shadow-primary/30 mx-auto mb-4">
             <BrainCircuit className="w-7 h-7 text-primary-foreground" />
           </div>
-          <h1 className="font-serif font-black text-3xl text-foreground">Notes by Allieza</h1>
+          <h1 className="font-black text-3xl text-foreground">Notes by Allieza</h1>
           <p className="text-muted-foreground text-sm mt-1">Admin access only</p>
         </div>
 
         {/* Card */}
         <div className="bg-card rounded-2xl border border-border shadow-xl shadow-black/5 p-8">
           <div className="mb-6">
-            <h2 className="font-serif font-bold text-xl text-foreground mb-1">Sign in</h2>
+            <h2 className="font-bold text-xl text-foreground mb-1">Sign in</h2>
             <p className="text-sm text-muted-foreground">
               Enter your credentials to access the dashboard.
             </p>

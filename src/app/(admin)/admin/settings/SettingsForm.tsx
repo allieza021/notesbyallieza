@@ -28,6 +28,8 @@ export default function SettingsForm({ profile, userEmail }: SettingsFormProps) 
     github_url: profile.github_url || '',
     facebook_url: profile.facebook_url || '',
     instagram_url: profile.instagram_url || '',
+    public_email: profile.public_email || '',
+    show_spotify: profile.show_spotify ?? true,
   });
 
   const [newPassword, setNewPassword] = useState('');
@@ -107,14 +109,14 @@ export default function SettingsForm({ profile, userEmail }: SettingsFormProps) 
     <div className="max-w-3xl mx-auto space-y-8">
       {/* Header */}
       <div>
-        <h1 className="font-serif font-black text-3xl text-foreground">Profile Settings</h1>
+        <h1 className="font-black text-3xl text-foreground">Profile Settings</h1>
         <p className="text-muted-foreground mt-1 text-sm">Manage your public profile and account settings.</p>
       </div>
 
       {/* Profile Form */}
       <form onSubmit={handleSave} className="space-y-6">
         <div className="bg-card rounded-2xl border border-border p-6 space-y-5">
-          <h2 className="font-serif font-bold text-lg text-foreground border-b border-border pb-3">
+          <h2 className="font-bold text-lg text-foreground border-b border-border pb-3">
             Public Profile
           </h2>
 
@@ -125,7 +127,7 @@ export default function SettingsForm({ profile, userEmail }: SettingsFormProps) 
                 {form.avatar_url ? (
                   <Image src={form.avatar_url} alt="Avatar" width={80} height={80} className="object-cover" />
                 ) : (
-                  <span className="text-2xl font-serif font-black text-primary">A</span>
+                  <span className="text-2xl font-black text-primary">A</span>
                 )}
               </div>
             </div>
@@ -175,27 +177,57 @@ export default function SettingsForm({ profile, userEmail }: SettingsFormProps) 
 
         {/* Social Links */}
         <div className="bg-card rounded-2xl border border-border p-6 space-y-4">
-          <h2 className="font-serif font-bold text-lg text-foreground border-b border-border pb-3">
+          <h2 className="font-bold text-lg text-foreground border-b border-border pb-3">
             Social Links
           </h2>
           {[
-            { key: 'website', label: 'Website', placeholder: 'https://yourwebsite.com' },
-            { key: 'github_url', label: 'GitHub', placeholder: 'https://github.com/username' },
-            { key: 'facebook_url', label: 'Facebook', placeholder: 'https://facebook.com/username' },
-            { key: 'instagram_url', label: 'Instagram', placeholder: 'https://instagram.com/username' },
-          ].map(({ key, label, placeholder }) => (
+            { key: 'public_email', label: 'Public Email (Gmail)', placeholder: 'your@gmail.com', type: 'email' },
+            { key: 'website', label: 'Website', placeholder: 'https://yourwebsite.com', type: 'url' },
+            { key: 'github_url', label: 'GitHub', placeholder: 'https://github.com/username', type: 'url' },
+            { key: 'facebook_url', label: 'Facebook', placeholder: 'https://facebook.com/username', type: 'url' },
+            { key: 'instagram_url', label: 'Instagram', placeholder: 'https://instagram.com/username', type: 'url' },
+          ].map(({ key, label, placeholder, type }) => (
             <div key={key} className="space-y-2">
               <Label htmlFor={key}>{label}</Label>
               <Input
                 id={key}
-                value={form[key as keyof typeof form]}
+                value={form[key as keyof typeof form] as string}
                 onChange={(e) => set(key, e.target.value)}
                 placeholder={placeholder}
-                type="url"
+                type={type}
               />
               {errors[key] && <p className="text-xs text-destructive">{errors[key]}</p>}
             </div>
           ))}
+        </div>
+
+        {/* Widget Settings */}
+        <div className="bg-card rounded-2xl border border-border p-6 space-y-4">
+          <h2 className="font-bold text-lg text-foreground border-b border-border pb-3 flex items-center gap-2">
+            Widget Settings
+          </h2>
+          <div className="flex items-center justify-between p-4 bg-muted/30 rounded-xl border border-border">
+            <div className="space-y-0.5">
+              <Label className="text-base font-semibold">Show Live Spotify Widget</Label>
+              <p className="text-xs text-muted-foreground">
+                Display the currently playing Spotify track on your website footer/navbar to public viewers.
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => set('show_spotify', !form.show_spotify as any)}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+                form.show_spotify ? 'bg-primary' : 'bg-input'
+              }`}
+            >
+              <span className="sr-only">Toggle Spotify Widget</span>
+              <span
+                className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out ${
+                  form.show_spotify ? 'translate-x-5' : 'translate-x-1'
+                }`}
+              />
+            </button>
+          </div>
         </div>
 
         {/* Global error / success */}
@@ -218,7 +250,7 @@ export default function SettingsForm({ profile, userEmail }: SettingsFormProps) 
 
       {/* Change Password */}
       <form onSubmit={handlePasswordChange} className="bg-card rounded-2xl border border-border p-6 space-y-4">
-        <h2 className="font-serif font-bold text-lg text-foreground border-b border-border pb-3 flex items-center gap-2">
+        <h2 className="font-bold text-lg text-foreground border-b border-border pb-3 flex items-center gap-2">
           <KeyRound className="w-5 h-5 text-primary" />
           Change Password
         </h2>

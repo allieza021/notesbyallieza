@@ -116,12 +116,12 @@ export default function ImageUpload({
               <span className="text-sm text-muted-foreground">Uploading…</span>
             </div>
           ) : (
-            <div className="flex flex-col items-center gap-2 group-hover:scale-105 transition-transform">
+            <div className="flex flex-col items-center gap-2 group-hover:scale-105 transition-transform text-center px-4">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                 <ImageIcon className="w-6 h-6 text-primary" />
               </div>
               <span className="text-sm font-semibold text-foreground">{label}</span>
-              <span className="text-xs text-muted-foreground">
+              <span className="text-xs text-muted-foreground break-words">
                 Drag &amp; drop or click • JPG, PNG, WebP, GIF • Max 5MB
               </span>
             </div>

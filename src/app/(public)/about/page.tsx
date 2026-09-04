@@ -54,7 +54,7 @@ export default async function AboutPage() {
                       className="object-cover"
                     />
                   ) : (
-                    <span className="text-6xl font-serif font-black text-primary">A</span>
+                    <span className="text-6xl font-black text-primary">A</span>
                   )}
                 </div>
                 {/* Online indicator */}
@@ -68,7 +68,7 @@ export default async function AboutPage() {
                 <GraduationCap className="w-3.5 h-3.5" />
                 {profile?.headline || 'BS Information Technology Student'}
               </div>
-              <h1 className="font-serif font-black text-foreground mb-2">
+              <h1 className="font-black text-foreground mb-2">
                 {profile?.display_name || profile?.full_name || 'Allieza'}
               </h1>
               {profile?.full_name && profile.display_name && (
@@ -82,11 +82,11 @@ export default async function AboutPage() {
               {/* Stats */}
               <div className="flex gap-8 mb-6">
                 <div>
-                  <div className="text-2xl font-serif font-black text-primary">{total}+</div>
+                  <div className="text-2xl font-black text-primary">{total}+</div>
                   <div className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Posts</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-serif font-black text-primary">{categories.length}</div>
+                  <div className="text-2xl font-black text-primary">{categories.length}</div>
                   <div className="text-xs text-muted-foreground font-medium uppercase tracking-wider">Topics</div>
                 </div>
               </div>
@@ -121,10 +121,9 @@ export default async function AboutPage() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 className="font-serif font-bold text-3xl text-foreground mb-4">What I Write About</h2>
+              <h2 className="font-bold text-3xl text-foreground mb-4">What I Write About</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                This blog covers everything I learn and experience as an IT student. From in-depth
-                cybersecurity concepts to hands-on software projects, I document it all.
+                This blog is where I share what I learn and experience as a BSIT student. From Information Assurance & Security topics to programming, software development, and other IT-related lessons, I document my academic journey and the knowledge I gain along the way.
               </p>
               <div className="space-y-3">
                 {categories.length > 0 ? categories.map((cat) => (
@@ -154,21 +153,16 @@ export default async function AboutPage() {
             </div>
 
             <div>
-              <h2 className="font-serif font-bold text-3xl text-foreground mb-4">About This Blog</h2>
+              <h2 className="font-bold text-3xl text-foreground mb-4">About This Blog</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  <strong className="text-foreground">Notes by Allieza</strong> is a personal
-                  academic blog born from the desire to document every lesson, project, and
-                  breakthrough moment throughout my BS Information Technology journey.
+                  <strong className="text-foreground">Notes by Allieza</strong> is a personal academic blog created to document the lessons, projects, and experiences I encounter throughout my Bachelor of Science in Information Technology journey.
                 </p>
                 <p>
-                  Every post is written with care — whether it&apos;s a deep dive into network
-                  security, a step-by-step programming tutorial, a reflection on a challenging
-                  assignment, or notes from an information assurance activity.
+                  Each post reflects what I learn in class, including Information Assurance & Security, programming, software development, and other IT-related topics. I also share project updates, reflections, and notes that help me better understand the concepts I study.
                 </p>
                 <p>
-                  My goal is to create a resource that&apos;s both useful for myself as a future
-                  reference and valuable for other students navigating similar paths.
+                  The goal of this blog is to serve as my personal learning journal and a helpful reference for anyone interested in exploring similar topics.
                 </p>
               </div>
 

@@ -26,7 +26,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   return (
     <div className="min-h-screen py-16">
       <div className="container mx-auto px-6 max-w-6xl">
-        <h1 className="font-serif font-black text-4xl text-foreground mb-3">Search</h1>
+        <h1 className="font-black text-4xl text-foreground mb-3">Search</h1>
 
         {/* Search Form */}
         <form action="/search" method="GET" className="mb-10 max-w-xl">
@@ -63,7 +63,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
             ) : (
               <div className="text-center py-20">
                 <div className="text-5xl mb-4">🔍</div>
-                <h3 className="font-serif text-xl font-bold text-foreground mb-2">No results found</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2">No results found</h3>
                 <p className="text-muted-foreground">Try different keywords or browse all posts.</p>
               </div>
             )}

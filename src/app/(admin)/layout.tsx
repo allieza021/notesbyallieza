@@ -1,5 +1,4 @@
 import AdminSidebar from '@/components/layout/AdminSidebar';
-import { ThemeToggle } from '@/components/shared/ThemeToggle';
 import { createClient } from '@/lib/supabase/server';
 import { redirect } from 'next/navigation';
 
@@ -16,11 +15,10 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
       <div className="flex-1 flex flex-col min-h-screen">
         {/* Admin Top Bar */}
-        <header className="h-14 bg-card border-b border-border flex items-center justify-between px-6 sticky top-0 z-40">
-          <div className="text-sm text-muted-foreground">
+        <header className="h-14 bg-card border-b border-border flex items-center justify-between pl-6 pr-14 md:px-6 sticky top-0 z-40">
+          <div className="text-sm text-muted-foreground truncate w-full">
             Logged in as <span className="font-semibold text-foreground">{user.email}</span>
           </div>
-          <ThemeToggle />
         </header>
 
         {/* Page Content */}

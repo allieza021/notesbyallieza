@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BrainCircuit, Github, Facebook, Instagram, Globe, Heart } from 'lucide-react';
+import { SpotifyWidget } from '@/components/shared/SpotifyWidget';
 
 const footerLinks = {
   pages: [
@@ -28,13 +29,12 @@ export default function Footer() {
               <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-200">
                 <BrainCircuit className="w-4 h-4 text-primary-foreground" />
               </div>
-              <span className="font-serif font-bold text-xl text-foreground">
+              <span className="font-bold text-xl text-foreground">
                 Notes <span className="text-primary">by Allieza</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed max-w-sm">
-              A personal academic blog covering cybersecurity, information assurance,
-              software development, and programming. Every post is a window into
+              A personal academic blog covering Information Assurance & Security. Every post is a window into
               learning and discovery.
             </p>
             {/* Social Links */}
@@ -111,11 +111,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-10 md:mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-sm text-muted-foreground flex items-center justify-center sm:justify-start gap-1.5">
-            © {currentYear} Notes by Allieza. Made with{' '}
-            <Heart className="w-3.5 h-3.5 text-red-500 fill-current" /> by Allieza.
+            © {currentYear} Notes by Allieza. All rights reserved.
           </p>
           <p className="text-xs text-muted-foreground">
-            Built with Next.js & Supabase
+            Built with Next.js & Vercel
           </p>
         </div>
       </div>

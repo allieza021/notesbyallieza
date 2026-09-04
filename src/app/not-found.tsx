@@ -8,7 +8,7 @@ export default function NotFound() {
       <div className="text-center px-6 max-w-lg">
         {/* 404 Display */}
         <div className="relative mb-8">
-          <div className="text-[10rem] font-serif font-black text-primary/10 leading-none select-none">
+          <div className="text-[10rem] font-black text-primary/10 leading-none select-none">
             404
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -16,7 +16,7 @@ export default function NotFound() {
           </div>
         </div>
 
-        <h1 className="font-serif font-black text-4xl text-foreground mb-3">
+        <h1 className="font-black text-4xl text-foreground mb-3">
           Page not found
         </h1>
         <p className="text-muted-foreground text-lg leading-relaxed mb-8">

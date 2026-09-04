@@ -33,10 +33,10 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-all duration-300',
+        'sticky top-0 z-[60] w-full transition-all duration-300',
         scrolled
-          ? 'bg-background/95 backdrop-blur-md shadow-sm border-b border-border'
-          : 'bg-background/80 backdrop-blur-sm'
+          ? 'bg-background/60 backdrop-blur-xl shadow-sm border-b border-border/50'
+          : 'bg-background/40 backdrop-blur-md'
       )}
     >
       <div className="container mx-auto px-6 max-w-6xl">
@@ -50,7 +50,7 @@ export default function Navbar() {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-200">
               <BrainCircuit className="w-4 h-4 text-primary-foreground" />
             </div>
-            <span className="font-serif font-bold text-xl text-foreground tracking-tight">
+            <span className="font-bold text-xl text-foreground tracking-tight">
               Notes <span className="text-primary">by Allieza</span>
             </span>
           </Link>
@@ -92,7 +92,7 @@ export default function Navbar() {
         <div
           className={cn(
             'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
-            isOpen ? 'max-h-64 opacity-100 pb-4' : 'max-h-0 opacity-0'
+            isOpen ? 'max-h-80 opacity-100 pb-4' : 'max-h-0 opacity-0'
           )}
         >
           <div className="flex flex-col gap-2 pt-4 pb-2 border-t border-border">
@@ -101,7 +101,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'px-5 py-3.5 rounded-xl text-base font-medium transition-all duration-200',
+                  'px-5 py-4 rounded-xl text-base font-medium transition-all duration-200',
                   isActive(link.href)
                     ? 'text-primary bg-primary/10 font-semibold'
                     : 'text-muted-foreground hover:text-foreground hover:bg-accent'

@@ -84,7 +84,7 @@ export default function CategoryForm({ category, mode }: CategoryFormProps) {
   return (
     <div className="max-w-2xl mx-auto">
       <div className="mb-8">
-        <h1 className="font-serif font-black text-3xl text-foreground">
+        <h1 className="font-black text-3xl text-foreground">
           {mode === 'create' ? 'New Category' : 'Edit Category'}
         </h1>
         <p className="text-muted-foreground mt-1 text-sm">
@@ -153,16 +153,17 @@ export default function CategoryForm({ category, mode }: CategoryFormProps) {
           </div>
         </div>
 
-        <div className="pt-4 border-t border-border flex justify-end gap-3">
+        <div className="pt-4 border-t border-border flex flex-col sm:flex-row sm:justify-end gap-3">
           <Button
             type="button"
             variant="outline"
             onClick={() => router.back()}
             disabled={saving}
+            className="w-full sm:w-auto"
           >
             Cancel
           </Button>
-          <Button type="submit" disabled={saving}>
+          <Button type="submit" disabled={saving} className="w-full sm:w-auto">
             {saving && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
             <Save className="w-4 h-4 mr-2" />
             {mode === 'create' ? 'Create Category' : 'Save Changes'}

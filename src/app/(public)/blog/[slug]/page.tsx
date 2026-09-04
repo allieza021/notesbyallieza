@@ -6,6 +6,7 @@ import { getBlogBySlug, getRelatedBlogs } from '@/lib/queries/blogs';
 import BlogContent from '@/components/blog/BlogContent';
 import ReadingProgress from '@/components/shared/ReadingProgress';
 import BlogCard from '@/components/blog/BlogCard';
+import LikeViewCounter from '@/components/blog/LikeViewCounter';
 import { formatDate } from '@/lib/utils';
 import type { Metadata } from 'next';
 
@@ -84,40 +85,50 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
           )}
 
           {/* Title */}
-          <h1 className="font-serif font-black text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
+          <h1 className="font-black text-3xl md:text-4xl lg:text-5xl text-foreground mb-6 leading-tight">
             {blog.title}
           </h1>
 
           {/* Meta */}
-          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground border-y border-border py-4 mb-10">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-4 text-sm text-muted-foreground border-y border-border py-4 mb-10">
             {/* Author */}
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
-                {blog.author?.avatar_url ? (
-                  <Image
-                    src={blog.author.avatar_url}
-                    alt={blog.author.display_name || 'Author'}
-                    width={32}
-                    height={32}
-                    className="object-cover"
-                  />
-                ) : (
-                  <User className="w-4 h-4 text-primary" />
-                )}
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                  {blog.author?.avatar_url ? (
+                    <Image
+                      src={blog.author.avatar_url}
+                      alt={blog.author.display_name || 'Author'}
+                      width={32}
+                      height={32}
+                      className="object-cover"
+                    />
+                  ) : (
+                    <User className="w-4 h-4 text-primary" />
+                  )}
+                </div>
+                <span className="font-medium text-foreground">
+                  {blog.author?.display_name || blog.author?.full_name || 'Allieza'}
+                </span>
               </div>
-              <span className="font-medium text-foreground">
-                {blog.author?.display_name || blog.author?.full_name || 'Allieza'}
+
+              <span className="flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5" />
+                {formatDate(dateStr)}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5" />
+                {blog.reading_time_minutes} min read
               </span>
             </div>
 
-            <span className="flex items-center gap-1.5">
-              <Calendar className="w-3.5 h-3.5" />
-              {formatDate(dateStr)}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Clock className="w-3.5 h-3.5" />
-              {blog.reading_time_minutes} min read
-            </span>
+            <div className="w-full sm:w-auto sm:ml-auto flex justify-start sm:justify-end mt-2 sm:mt-0 pt-4 sm:pt-0 border-t border-border sm:border-0">
+              <LikeViewCounter 
+                slug={blog.slug} 
+                initialViews={blog.views} 
+                initialLikes={blog.likes} 
+              />
+            </div>
           </div>
 
           {/* Content */}
@@ -155,14 +166,14 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
                     className="object-cover"
                   />
                 ) : (
-                  <span className="text-2xl font-serif font-bold text-primary">A</span>
+                  <span className="text-2xl font-bold text-primary">A</span>
                 )}
               </div>
               <div>
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-1">
                   Written by
                 </p>
-                <h3 className="font-serif font-bold text-lg text-foreground mb-1">
+                <h3 className="font-bold text-lg text-foreground mb-1">
                   {blog.author.display_name || blog.author.full_name || 'Allieza'}
                 </h3>
                 {blog.author.bio && (
@@ -185,7 +196,7 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
         {relatedBlogs.length > 0 && (
           <section className="py-12 md:py-16 bg-muted/30 border-t border-border">
             <div className="container mx-auto px-4 md:px-6 max-w-6xl">
-              <h2 className="font-serif font-bold text-2xl md:text-3xl text-foreground mb-8">Related Posts</h2>
+              <h2 className="font-bold text-2xl md:text-3xl text-foreground mb-8">Related Posts</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {relatedBlogs.map((related) => (
                   <BlogCard key={related.id} blog={related} />

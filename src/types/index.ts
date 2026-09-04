@@ -13,6 +13,8 @@ export interface Profile {
   github_url: string | null;
   facebook_url: string | null;
   instagram_url: string | null;
+  public_email: string | null;
+  show_spotify?: boolean;
   created_at: string;
   updated_at: string;
 }
@@ -45,6 +47,8 @@ export interface Blog {
   is_featured: boolean;
   reading_time_minutes: number;
   published_at: string | null;
+  views: number;
+  likes: number;
   created_at: string;
   updated_at: string;
   // Joined fields
