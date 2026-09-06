@@ -73,14 +73,14 @@ export default async function HomePage() {
                 <strong className="text-foreground">class activities</strong>,{' '}
                 <strong className="text-foreground">projects</strong>, and academic reflections.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Button asChild size="lg" className="shadow-lg shadow-primary/25 w-full sm:w-auto">
-                  <Link href="/blog" className="flex items-center justify-center w-full">
+                  <Link href="/blog" className="flex items-center justify-center">
                     Explore Posts <ArrowRight className="w-4 h-4 ml-2" />
                   </Link>
                 </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link href="/about" className="flex items-center justify-center w-full">About Me</Link>
+                <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
+                  <Link href="/about" className="flex items-center justify-center">About Me</Link>
                 </Button>
               </div>
             </FadeUp>
