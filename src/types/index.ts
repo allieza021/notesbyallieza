@@ -15,6 +15,7 @@ export interface Profile {
   instagram_url: string | null;
   public_email: string | null;
   show_spotify?: boolean;
+  show_top_songs?: boolean;
   created_at: string;
   updated_at: string;
 }
@@ -89,3 +90,4 @@ export interface PaginatedBlogs {
   pageSize: number;
   totalPages: number;
 }
+

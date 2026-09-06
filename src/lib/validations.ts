@@ -38,6 +38,7 @@ export const profileSchema = z.object({
   instagram_url: z.string().url('Must be a valid URL').optional().or(z.literal('')),
   public_email: z.string().email('Must be a valid email address').optional().or(z.literal('')),
   show_spotify: z.boolean().optional().default(true),
+  show_top_songs: z.boolean().optional().default(true),
 });
 
 export type ProfileFormValues = z.infer<typeof profileSchema>;
@@ -60,3 +61,4 @@ export const categorySchema = z.object({
   description: z.string().max(300).optional().or(z.literal('')),
   color: z.string().default('#4f46e5'),
 });
+

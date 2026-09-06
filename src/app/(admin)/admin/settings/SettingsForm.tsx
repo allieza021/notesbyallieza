@@ -228,7 +228,27 @@ export default function SettingsForm({ profile, userEmail }: SettingsFormProps) 
               />
             </button>
           </div>
-        </div>
+                    </div>
+
+            <div className="flex items-center justify-between p-4 bg-muted/30 rounded-xl border border-border mt-4">
+              <div className="space-y-0.5">
+                <Label className="text-base font-semibold">Show Top 5 Songs</Label>
+                <p className="text-xs text-muted-foreground">
+                  Display your Top 5 Songs section on your public profile.
+                </p>
+              </div>
+              <button
+                type="button"
+                onClick={() => set('show_top_songs', !form.show_top_songs as any)}
+                className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background `}
+              >
+                <span className="sr-only">Toggle Top Songs</span>
+                <span
+                  className={`inline-block h-5 w-5 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out `}
+                />
+              </button>
+            </div>
+          </div>
 
         {/* Global error / success */}
         {errors._global && (
@@ -297,3 +317,4 @@ export default function SettingsForm({ profile, userEmail }: SettingsFormProps) 
     </div>
   );
 }
+

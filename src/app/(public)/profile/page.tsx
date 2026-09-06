@@ -162,9 +162,11 @@ export default async function ProfilePage() {
           </BentoCard>
 
           {/* Top 5 Songs Card */}
+          {profile?.show_top_songs !== false && (
           <BentoCard className="md:col-span-3 lg:col-span-4 p-6 md:p-8">
             <TopSongs />
           </BentoCard>
+        )}
 
         </div>        {/* Recent Posts */}
         {recentBlogs.length > 0 && (
@@ -186,4 +188,5 @@ export default async function ProfilePage() {
     </div>
   );
 }
+
 
