@@ -15,7 +15,7 @@ interface BlogCardProps {
 }
 
 export default function BlogCard({ blog, featured = false }: BlogCardProps) {
-  const dateStr = blog.published_at || blog.created_at;
+  const dateStr = blog.created_at;
   const ref = useRef<HTMLDivElement>(null);
 
   const mouseX = useMotionValue(0);

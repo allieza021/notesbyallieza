@@ -38,7 +38,7 @@ export default async function SingleBlogPage({ params }: SingleBlogPageProps) {
   if (!blog) notFound();
 
   const relatedBlogs = await getRelatedBlogs(blog.category_id, blog.slug, 3);
-  const dateStr = blog.published_at || blog.created_at;
+  const dateStr = blog.created_at;
 
   return (
     <>
