@@ -13,6 +13,7 @@ export function formatDate(dateString: string | null): string {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
+    timeZone: 'UTC',
   });
 }
 
@@ -23,6 +24,7 @@ export function formatShortDate(dateString: string | null): string {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
+    timeZone: 'UTC',
   });
 }
 
