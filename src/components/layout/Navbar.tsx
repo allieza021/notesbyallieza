@@ -61,6 +61,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={true}
                 className={cn(
                   'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200',
                   isActive(link.href)
@@ -100,6 +101,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                prefetch={true}
                 className={cn(
                   'px-5 py-4 rounded-xl text-base font-medium transition-all duration-200',
                   isActive(link.href)

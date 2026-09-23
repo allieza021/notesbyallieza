@@ -24,8 +24,8 @@ export default function BlogCard({ blog, featured = false }: BlogCardProps) {
   const rotateY = useSpring(0, { stiffness: 150, damping: 20, mass: 0.8 });
   const [isHovered, setIsHovered] = useState(false);
 
-  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    if (!ref.current) return;
+  function handleMouseMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType === 'touch' || !ref.current) return;
     const rect = ref.current.getBoundingClientRect();
     mouseX.set(e.clientX - rect.left);
     mouseY.set(e.clientY - rect.top);
@@ -35,22 +35,29 @@ export default function BlogCard({ blog, featured = false }: BlogCardProps) {
     rotateX.set((cy / (rect.height / 2)) * -6);
   }
 
-  function handleMouseLeave() {
+  function handleMouseLeave(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType === 'touch') return;
     setIsHovered(false);
     rotateX.set(0);
     rotateY.set(0);
   }
 
+  function handleMouseEnter(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType === 'touch') return;
+    setIsHovered(true);
+  }
+
   return (
     <Link
       href={`/blog/${blog.slug}`}
+      prefetch={true}
       className={`relative group block z-10 hover:z-50 outline-none`}
     >
       <motion.div
         ref={ref}
-        onMouseMove={handleMouseMove}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={handleMouseLeave}
+        onPointerMove={handleMouseMove}
+        onPointerEnter={handleMouseEnter}
+        onPointerLeave={handleMouseLeave}
         style={{
           rotateX,
           rotateY,
